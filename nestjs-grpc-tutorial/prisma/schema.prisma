@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["tracing"]
+}
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model Hero {
+  id        Int    @id @default(autoincrement())
+  name  String @unique
+  hp    Int    @default(100)
+  power Int
+}
